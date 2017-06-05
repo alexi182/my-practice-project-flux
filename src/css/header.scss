@@ -1,0 +1,38 @@
+@import './global/color.scss';
+
+a {
+   color: white;
+}
+
+a:focus {
+   text-decoration: none;
+   background-color: transparent!important;
+   color: $red!important;
+}
+
+a:hover {
+   color: blue!important;
+   background: grey!important;
+}
+
+.active {
+   color: #fff;
+ /*  background: grey;*/
+   td{
+      background: #5cb85c!important;
+   }
+}
+
+.header {
+   background-color: #222;
+   a{
+      color: $red;
+   }
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+   text-decoration: none;
+   background-color: transparent;
+   color: #fff;
+}

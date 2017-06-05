@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: 0;
+  outline: 0; }
+
+body {
+  background: #dcdcdc; }
+
+#page {
+  margin: 0 auto; }
+
+.info {
+  border: 1px solid grey; }
+
+.data-block {
+  background: #F5F5DC; }
+  .data-block__item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 10px; }
+    .data-block__item:first-child {
+      width: 5%; }
+    .data-block__item:nth-of-type(2) {
+      width: 10%; }
+    .data-block__item:last-child {
+      width: 81%; }
+
+.table td {
+  border: 1px solid grey;
+  padding: 5px 10px; }
+
+.service-table .row {
+  cursor: pointer;
+  transition: all 0.3s; }
+  .service-table .row:hover {
+    background: #a3d7a3;
+    color: #fff; }
+
+.selected {
+  background: #4d4dff; }
+
+.profile-content {
+  background: url("../images/avatar.jpg") no-repeat top right; }
+
+.page-inner {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.content {
+  flex: 1; }
+
+.todo-block {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1); }
+  .todo-block input {
+    padding: 5px 8px; }
+
+.todo-block__list {
+  border: 1px solid #ededed; }
+
+.todo-block__list-item {
+  padding: 10px 0;
+  border-top: 1px solid #ededed; }
+  .todo-block__list-item p {
+    font-size: 19px; }
+  .todo-block__list-item:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.todo-list {
+  width: 50%;
+  margin: 0 auto; }
+
+.todo-block__userpanel-right ul {
+  text-align: right; }
+  .todo-block__userpanel-right ul li {
+    display: inline-block;
+    margin-left: 15px; }
+    .todo-block__userpanel-right ul li a {
+      border: 1px solid transparent;
+      transition: all 0.3s;
+      padding: 10px 5px;
+      color: #23527c; }
+      .todo-block__userpanel-right ul li a:hover {
+        border: 1px solid rgba(175, 47, 47, 0.2);
+        border-radius: 4px;
+        text-decoration: none;
+        background: transparent !important;
+        color: red !important; }
+      .todo-block__userpanel-right ul li a:focus {
+        border-radius: 4px;
+        text-decoration: none;
+        /*color: #23527c!important;*/ }
+
+.selected {
+  border: 1px solid rgba(175, 47, 47, 0.2);
+  border-radius: 4px;
+  text-decoration: none;
+  background: transparent !important;
+  color: red !important; }
+
+.checkbox {
+  outline: 0; }
+  .checkbox:hover {
+    cursor: pointer; }
+  .checkbox:focus {
+    outline: none; }
+
+.todo-block__userpanel {
+  padding: 10px 0; }
+  .todo-block__userpanel span {
+    font-size: 18px; }
+  .todo-block__userpanel:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.active-link {
+  border: 1px solid rgba(175, 47, 47, 0.2) !important;
+  border-radius: 4px;
+  text-decoration: none;
+  background: transparent !important;
+  color: red !important; }
+
+.completed {
+  color: green;
+  font-weight: bold; }
+
+.city-block {
+  margin-top: 50px; }
+  .city-block table {
+    margin: 0 auto; }
+    .city-block table th {
+      text-align: center;
+      border: 1px solid #000;
+      padding: 7px 10px;
+      cursor: pointer; }
+    .city-block table td {
+      padding: 7px 10px;
+      border: 1px solid #000; }
+
+/*# sourceMappingURL=common.css.map */
