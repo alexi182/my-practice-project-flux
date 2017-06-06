@@ -23,7 +23,6 @@ const items = [
 export default class TodoListPanel extends React.Component {
    constructor(props) {
       super(props);
-
 /*      this.items = [
          {
             text: 'все',
@@ -42,6 +41,7 @@ export default class TodoListPanel extends React.Component {
             type: 'remove'
          },
       ]*/
+
    }
 
    action(e, item) {
