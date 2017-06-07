@@ -1,5 +1,8 @@
 import ServiceItem from './serviceItem';
 import {autobind} from 'core-decorators';
+import { CHANGE } from '../constants/service';
+import * as actions from '../actions/data';
+import store from  '../stores/data';
 const servicesData = require('../service.json');
 let TestComp = (props) => {
    return (<div>
@@ -29,28 +32,18 @@ export default class Service extends React.Component {
       select: React.PropTypes.func
    }
 
-   select(name) {
-
-      let servicesSelected = this.state.services.slice(0); // новый массив в памяти с теми же элементами - оптимизация
-      let s = servicesSelected.find(srv => srv.name == name);
-
-      if (!s) return;
-
-      if (s.selected == true) {
-         s.selected = false;
-      } else {
-         s.selected = true;
-      }
-      // s.selected = !s.selected;
-
+   update() {
       this.setState({
-         services2: servicesSelected,
-         total: this.total(servicesSelected)
-      })
+         notes: store.Service
+      });
    }
 
-   total(services2) {
-      return services2.filter(s => s.selected).reduce((prev, current) => prev + current.price, 0);
+   componentWillMount() {
+      store.addListener(CHANGE, this.update);
+   }
+
+   componentWillUnmount() {
+      store.removeListener(CHANGE, this.update);
    }
 
    render() {

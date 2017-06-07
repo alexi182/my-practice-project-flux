@@ -1,0 +1,5 @@
+const SELECT = "SELECT_SERVICE";
+const TOTAL = "TOTAL_SERVICE";
+const CHANGE = "SERVICE_CHANGE";
+
+export { SELECT, TOTAL, CHANGE }
