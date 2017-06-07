@@ -1,7 +1,7 @@
 import {autobind} from 'core-decorators';
 import { CHANGE } from '../constants/data';
 import * as actions from '../actions/data';
-import store from  '../stores/todo';
+import store from  '../stores/data';
 const searchData = require('../data2.json');
 
 @autobind()
