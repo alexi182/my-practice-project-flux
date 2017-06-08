@@ -8,7 +8,8 @@ export default class ServiceItem extends React.Component {
    }
 
    static contextTypes = {
-      select: React.PropTypes.func
+      select: React.PropTypes.func,
+      total: React.PropTypes.func
    };
 
    clicked() {

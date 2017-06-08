@@ -11,7 +11,6 @@ class serviveStore extends EventEmitter {
       super();
 
       this.services = servicesData;
-      this.total = total(servicesData);
    }
 
    select(name) {
@@ -20,13 +19,7 @@ class serviveStore extends EventEmitter {
       let s = servicesSelected.find(srv => srv.name == name);
 
       if (!s) return;
-
-      if (s.selected == true) {
-         s.selected = false;
-      } else {
-         s.selected = true;
-      }
-      // s.selected = !s.selected;
+      s.selected = !s.selected;
 
       this.services = servicesSelected;
       this.total = this.total(servicesSelected);
@@ -38,15 +31,15 @@ class serviveStore extends EventEmitter {
    }
 
    get Service() { //метод для получения обновлённый(актуальных) значений из хранилища
-      return this.total.slice(0);
+      return this.services.slice(0);
    }
 
    handleAction(action) {  //метод,вызываемый диспетчером когда приходит action
       switch(action.type) { //ПРОверяем может ли данный тип экшена быть обработан в данном случае
          case consts.SELECT:
-            this.add(action.payload); break;
+            this.select(action.payload); break;
          case consts.TOTAL:
-            this.remove(action.payload); break;
+            this.total(action.payload); break;
       }
    }
 }

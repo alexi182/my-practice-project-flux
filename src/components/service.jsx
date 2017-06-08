@@ -3,12 +3,8 @@ import {autobind} from 'core-decorators';
 import { CHANGE } from '../constants/service';
 import * as actions from '../actions/data';
 import store from  '../stores/data';
+
 const servicesData = require('../service.json');
-let TestComp = (props) => {
-   return (<div>
-      {props.message}
-   </div>)
-};
 
 @autobind()
 export default class Service extends React.Component {
@@ -17,24 +13,25 @@ export default class Service extends React.Component {
       super(props);
 
       this.state = {
-         services: servicesData,
-         total: this.total(servicesData)
+         services: servicesData
       }
    }
 
    getChildContext() {
       return {
-         select: this.select
+         select: this.select,
+         total: this.total
       }
    }
 
    static childContextTypes = {
-      select: React.PropTypes.func
+      select: React.PropTypes.func,
+      total: React.PropTypes.func
    }
 
    update() {
       this.setState({
-         notes: store.Service
+         services: store.Service
       });
    }
 
@@ -49,7 +46,6 @@ export default class Service extends React.Component {
    render() {
       return (
           <div>
-             <TestComp message="Привет" />
              <h2>Услуги</h2>
              <table className="table service-table">
                 <tbody>
